@@ -1,0 +1,148 @@
+\doxysection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.cpp@{main.cpp}}
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ insertion\+Sort} (int arr[$\,$], int n)
+\begin{DoxyCompactList}\small\item\em Function to sort the elements The function insertion\+Sort receives the array that\textquotesingle{}s going to be insertion sorted and an integer that is the number of elements in the array that we are going to sort. The algorithm works by taking and element and compare it to it\textquotesingle{}s adjacent elements of the array, until that element is sorted, then proceeds to do the same with the second element but in this case we don\textquotesingle{}t need to test the first element since it\textquotesingle{}s already sorted. \end{DoxyCompactList}\item 
+string \textbf{ read\+File} (string location)
+\begin{DoxyCompactList}\small\item\em Function to read the files The function read\+File receives an string containing the path of the file that we are going to use to receive the numbers for the sorting algorithm, this function takes the contents of the file we specified and then inserts it into an string called text, this will contain the contents of the file identically as in the file. \end{DoxyCompactList}\item 
+void \textbf{ write\+File} (string location, string result)
+\begin{DoxyCompactList}\small\item\em Function to write on the file The function write\+File receives an string containing the path of the file that we are going to write to, it also receives the string containing the text that we\textquotesingle{}re going to write on the file location. \end{DoxyCompactList}\item 
+int \textbf{ string\+Array\+Length} (string numbers)
+\begin{DoxyCompactList}\small\item\em Function to get the string array length The string\+Array\+Length function receives the an string that contains numbers separated by comae and will count how many numbers are they and returns the number of elements. \end{DoxyCompactList}\item 
+void \textbf{ make\+Array} (string string\+List, int string\+Array[$\,$])
+\begin{DoxyCompactList}\small\item\em Function to make an array from a text file The function make\+Array will take the string that read\+File generates and will separate the numbers that are separated by coma and will add it as new integer array element in the sting\+Array array. \end{DoxyCompactList}\item 
+string \textbf{ make\+String} (string result, int string\+Array[$\,$], int array\+Size)
+\begin{DoxyCompactList}\small\item\em Function to convert an array into a string with its contents The make\+String function reads the contents of an int array and writes it on a string and separates it by a coma, resulting on a pretty similar string as the one we had in the beginning. \end{DoxyCompactList}\item 
+int \textbf{ main} ()
+\begin{DoxyCompactList}\small\item\em Main function The main function is the first function that runs when the project is executed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\label{main_8cpp_a3fde3e15492d674dbd6caf7c061a2b35}} 
+\index{main.cpp@{main.cpp}!insertionSort@{insertionSort}}
+\index{insertionSort@{insertionSort}!main.cpp@{main.cpp}}
+\doxysubsubsection{insertionSort()}
+{\footnotesize\ttfamily void insertion\+Sort (\begin{DoxyParamCaption}\item[{int}]{arr[$\,$],  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Function to sort the elements The function insertion\+Sort receives the array that\textquotesingle{}s going to be insertion sorted and an integer that is the number of elements in the array that we are going to sort. The algorithm works by taking and element and compare it to it\textquotesingle{}s adjacent elements of the array, until that element is sorted, then proceeds to do the same with the second element but in this case we don\textquotesingle{}t need to test the first element since it\textquotesingle{}s already sorted. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & \\
+\hline
+{\em n} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{main()}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main function The main function is the first function that runs when the project is executed. 
+
+\begin{DoxyReturn}{Returns}
+an integer value o 0 indicating that the code ran successfully 
+\end{DoxyReturn}
+\mbox{\label{main_8cpp_ae92ec29830fd02f5c6cd13c50b299858}} 
+\index{main.cpp@{main.cpp}!makeArray@{makeArray}}
+\index{makeArray@{makeArray}!main.cpp@{main.cpp}}
+\doxysubsubsection{makeArray()}
+{\footnotesize\ttfamily void make\+Array (\begin{DoxyParamCaption}\item[{string}]{string\+List,  }\item[{int}]{string\+Array[$\,$] }\end{DoxyParamCaption})}
+
+
+
+Function to make an array from a text file The function make\+Array will take the string that read\+File generates and will separate the numbers that are separated by coma and will add it as new integer array element in the sting\+Array array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string\+List} & \\
+\hline
+{\em string\+Array} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{main_8cpp_a37c227b1c0dbf64ad108847be0883280}} 
+\index{main.cpp@{main.cpp}!makeString@{makeString}}
+\index{makeString@{makeString}!main.cpp@{main.cpp}}
+\doxysubsubsection{makeString()}
+{\footnotesize\ttfamily string make\+String (\begin{DoxyParamCaption}\item[{string}]{result,  }\item[{int}]{string\+Array[$\,$],  }\item[{int}]{array\+Size }\end{DoxyParamCaption})}
+
+
+
+Function to convert an array into a string with its contents The make\+String function reads the contents of an int array and writes it on a string and separates it by a coma, resulting on a pretty similar string as the one we had in the beginning. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & \\
+\hline
+{\em string\+Array} & \\
+\hline
+{\em array\+Size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a string containing the numbers of the string\+Array[] array separated by a coma 
+\end{DoxyReturn}
+\mbox{\label{main_8cpp_a9ee49ff16a323664db1c8b7bae752ebf}} 
+\index{main.cpp@{main.cpp}!readFile@{readFile}}
+\index{readFile@{readFile}!main.cpp@{main.cpp}}
+\doxysubsubsection{readFile()}
+{\footnotesize\ttfamily string read\+File (\begin{DoxyParamCaption}\item[{string}]{location }\end{DoxyParamCaption})}
+
+
+
+Function to read the files The function read\+File receives an string containing the path of the file that we are going to use to receive the numbers for the sorting algorithm, this function takes the contents of the file we specified and then inserts it into an string called text, this will contain the contents of the file identically as in the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The contents of the file we\textquotesingle{}re looking for, it will return and empty string if it doesn\textquotesingle{}t find any matching file in the specified location. 
+\end{DoxyReturn}
+\mbox{\label{main_8cpp_ad488d4d1e5858b3fb112f1fb16ea0a6e}} 
+\index{main.cpp@{main.cpp}!stringArrayLength@{stringArrayLength}}
+\index{stringArrayLength@{stringArrayLength}!main.cpp@{main.cpp}}
+\doxysubsubsection{stringArrayLength()}
+{\footnotesize\ttfamily int string\+Array\+Length (\begin{DoxyParamCaption}\item[{string}]{numbers }\end{DoxyParamCaption})}
+
+
+
+Function to get the string array length The string\+Array\+Length function receives the an string that contains numbers separated by comae and will count how many numbers are they and returns the number of elements. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em numbers} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of elements in the sting that contains numbers separated by coma 
+\end{DoxyReturn}
+\mbox{\label{main_8cpp_a487e218925e5abb0ccc60d055db2cc23}} 
+\index{main.cpp@{main.cpp}!writeFile@{writeFile}}
+\index{writeFile@{writeFile}!main.cpp@{main.cpp}}
+\doxysubsubsection{writeFile()}
+{\footnotesize\ttfamily void write\+File (\begin{DoxyParamCaption}\item[{string}]{location,  }\item[{string}]{result }\end{DoxyParamCaption})}
+
+
+
+Function to write on the file The function write\+File receives an string containing the path of the file that we are going to write to, it also receives the string containing the text that we\textquotesingle{}re going to write on the file location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em location} & \\
+\hline
+{\em result} & \\
+\hline
+\end{DoxyParams}
