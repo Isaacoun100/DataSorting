@@ -5,7 +5,14 @@
 #include <sstream>
 
 using namespace std;
-
+/**
+ * The function insertionSort receives the array that's going to be insertion sorted and an integer that is the number
+ * of elements in the array that we are going to sort. The algorithm works by taking and element and compare it to it's
+ * adjacent elements of the array, until that element is sorted, then proceeds to do the same with the second element
+ * but in this case we don't need to test the first element since it's already sorted.
+ * @param arr
+ * @param n
+ */
 void insertionSort(int arr[], int n)
 {
     int i, key, j;
@@ -14,9 +21,6 @@ void insertionSort(int arr[], int n)
         key = arr[i];
         j = i - 1;
 
-        /* Move elements of arr[0..i-1], that are
-        greater than key, to one position ahead
-        of their current position */
         while (j >= 0 && arr[j] > key)
         {
             arr[j + 1] = arr[j];
@@ -26,6 +30,14 @@ void insertionSort(int arr[], int n)
     }
 }
 
+/**
+ * The function readFile receives an string containing the path of the file that we are going to use to receive the
+ * numbers for the sorting algorithm, this function takes the contents of the file we specified and then inserts it into
+ * an string called text, this will contain the contents of the file identically as in the file.
+ * @param location
+ * @return The contents of the file we're looking for, it will return and empty string if it doesn't find any matching
+ * file in the specified location.
+ */
 string readFile(string location){
 
     string text;
@@ -36,15 +48,18 @@ string readFile(string location){
         return text;
     }
 
-    while(!path.eof()){
-        getline(path,text);
-        cout << "File was read succesfully" << endl;
-    }
+    while(!path.eof()){getline(path,text);}
 
     path.close();
     return text;
 }
 
+/**
+ * The function writeFile receives an string containing the path of the file that we are going to write to, it also
+ * receives the string containing the text that we're going to write on the file location.
+ * @param location
+ * @param result
+ */
 void writeFile(string location, string result){
 
     ofstream path(location);
@@ -59,6 +74,12 @@ void writeFile(string location, string result){
 
 }
 
+/**
+ *  The stringArrayLength function receives the an string that contains numbers separated by comae and will count how
+ *  many numbers are they and returns the number of elements.
+ * @param numbers
+ * @return the number of elements in the sting that contains numbers separated by coma
+ */
 int stringArrayLength(string numbers){
     int result=0;
     for(int i = 0; numbers[i] != '\0' ; i++){
@@ -69,14 +90,12 @@ int stringArrayLength(string numbers){
     return result;
 }
 
-void printArray(int arr[], int n)
-{
-    int i;
-    for (i = 0; i < n; i++)
-        cout << arr[i] << " ";
-    cout << endl;
-}
-
+/**
+ * The function makeArray will take the string that readFile generates and will separate the numbers that are separated by
+ * coma and will add it as new integer array element in the stingArray array.
+ * @param stringList
+ * @param stringArray
+ */
 void makeArray(string stringList, int stringArray[]){
 
     string box;
@@ -97,12 +116,14 @@ void makeArray(string stringList, int stringArray[]){
     }
 }
 
-int stringLength(string info){
-    int x=0;
-    while(info[x]!='\0'){x++;}
-    return x;
-}
-
+/**
+ * The makeString function reads the contents of an int array and writes it on a string and separates it by a coma,
+ * resulting on a pretty similar string as the one we had in the beginning.
+ * @param result
+ * @param stringArray
+ * @param arraySize
+ * @return a string containing the numbers of the stringArray[] array separated by a coma
+ */
 string makeString(string result, int stringArray[], int arraySize){
 
     for(int i=0; arraySize>=i; i++){
@@ -114,9 +135,14 @@ string makeString(string result, int stringArray[], int arraySize){
     return result;
 }
 
+/**
+ * The main function is the first function that runs when the project is executed
+ * @return an integer value o 0 indicating that the code ran successfully
+ */
 int main()
 {
     string text, readpath, writepath,result;
+
     cout << "Please enter the file to read";
     cin >> readpath;
 
@@ -132,8 +158,6 @@ int main()
     insertionSort(stringArray, stringListLength+1);
 
     result=makeString(result,stringArray,stringListLength );
-
-    cout<<result<<endl;
 
     writeFile(writepath,result);
 
