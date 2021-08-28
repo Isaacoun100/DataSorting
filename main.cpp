@@ -1,11 +1,10 @@
-// C++ program for insertion sort
 #include <bits/stdc++.h>
 #include <iostream>
 #include <fstream>
 #include <sstream>
 
 using namespace std;
-/**
+/** @brief Function to sort the elements
  * The function insertionSort receives the array that's going to be insertion sorted and an integer that is the number
  * of elements in the array that we are going to sort. The algorithm works by taking and element and compare it to it's
  * adjacent elements of the array, until that element is sorted, then proceeds to do the same with the second element
@@ -30,7 +29,7 @@ void insertionSort(int arr[], int n)
     }
 }
 
-/**
+/** @brief Function to read the files
  * The function readFile receives an string containing the path of the file that we are going to use to receive the
  * numbers for the sorting algorithm, this function takes the contents of the file we specified and then inserts it into
  * an string called text, this will contain the contents of the file identically as in the file.
@@ -54,7 +53,7 @@ string readFile(string location){
     return text;
 }
 
-/**
+/** @brief Function to write on the file
  * The function writeFile receives an string containing the path of the file that we are going to write to, it also
  * receives the string containing the text that we're going to write on the file location.
  * @param location
@@ -74,7 +73,7 @@ void writeFile(string location, string result){
 
 }
 
-/**
+/** @brief Function to get the string array length
  *  The stringArrayLength function receives the an string that contains numbers separated by comae and will count how
  *  many numbers are they and returns the number of elements.
  * @param numbers
@@ -90,7 +89,7 @@ int stringArrayLength(string numbers){
     return result;
 }
 
-/**
+/** @brief Function to make an array from a text file
  * The function makeArray will take the string that readFile generates and will separate the numbers that are separated by
  * coma and will add it as new integer array element in the stingArray array.
  * @param stringList
@@ -116,7 +115,7 @@ void makeArray(string stringList, int stringArray[]){
     }
 }
 
-/**
+/** @brief Function to convert an array into a string with its contents
  * The makeString function reads the contents of an int array and writes it on a string and separates it by a coma,
  * resulting on a pretty similar string as the one we had in the beginning.
  * @param result
@@ -135,30 +134,28 @@ string makeString(string result, int stringArray[], int arraySize){
     return result;
 }
 
-/**
+/** @brief Main function
  * The main function is the first function that runs when the project is executed
  * @return an integer value o 0 indicating that the code ran successfully
  */
 int main()
 {
     string text, readpath, writepath,result;
+    int stringListLength;
 
     cout << "Please enter the file to read";
     cin >> readpath;
-
     cout << "Please enter the file to write";
     cin >> writepath;
 
     text=readFile(readpath);
+    stringListLength = stringArrayLength(text);
 
-    int stringListLength = stringArrayLength(text);
     int stringArray[ stringListLength ];
 
     makeArray(text, stringArray);
     insertionSort(stringArray, stringListLength+1);
-
     result=makeString(result,stringArray,stringListLength );
-
     writeFile(writepath,result);
 
     return 0;
